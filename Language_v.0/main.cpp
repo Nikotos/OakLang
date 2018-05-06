@@ -8,7 +8,7 @@ int main()
         Asm_Compiler compiler{};
 
 
-        compiler.compile("Examples/factorial.oak");
+        compiler.compile("proga.oak");
     }
     catch(Acorn* acorn)
     {

@@ -64,7 +64,7 @@ namespace asm_oak
 
         Command* current_command_ = nullptr;
 
-        int current_indent_ = 0;
+        int current_indent_ = 8;
 
         /*-------------------------------------------*/
 

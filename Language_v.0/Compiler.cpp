@@ -158,6 +158,7 @@ void asm_oak::Function_Handler::handle_function(Function *function)
 
     ADD_STRING("push rbp");
     ADD_STRING("mov rbp, rsp");
+    ADD_STRING("add rsp, 128");
 
     /* handling stack frame */
     int indent = 16;
@@ -177,6 +178,7 @@ void asm_oak::Function_Handler::handle_function(Function *function)
         handle_command();
     }
 
+    ADD_STRING("sub rsp, 128");
     ADD_STRING("pop rbp");
     ADD_STRING("ret");
     ADD_DATA("\n");
