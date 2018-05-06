@@ -33,14 +33,13 @@ input:
 	ret
 
 output:
-	mov r13d, eax
+	mov r13, [rsp + 8]
 	call @@Print_Dec
 	call @@Print_space
 	ret
 
 
 	@@Print_Dec:
-		call @@clean_dec_buff
 		mov eax, r13d
 		mov r12d, 0
 		mov r11d, 100000
@@ -76,8 +75,8 @@ output:
 	mov ecx, @@output_dec_len
 	@@clean_loop:
 		sub ecx, 1
-		mov edx, 0
-		mov [@@output_dec + ecx], edx
+		mov dl, '0'
+		mov [@@output_dec + ecx], dl
 		cmp ecx, 0
 	jne @@clean_loop
 
@@ -103,7 +102,7 @@ ret
 section .data
 	 @@buffer times 20 db 0
 	 @@buffer_len equ $ - @@buffer
-	 @@output_dec times 6 db 0
+	 @@output_dec times 6 db '0'
 	 @@output_dec_len equ $ - @@output_dec
 	 @@dict dw '0123456789ABCDEFD'
 	 @@space db 0xD, 0xA
