@@ -1,0 +1,8 @@
+def_int det(int d, int c, int b, int a)
+{
+return a*b - c*d
+}
+def_int main()
+{
+output(det(input(), input(), input(), input()))
+}
