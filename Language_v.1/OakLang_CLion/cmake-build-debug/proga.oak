@@ -1,0 +1,23 @@
+def_int det(int d, int c, int b, int a)
+{
+  return a*d - b*c
+}
+def_int solve(int b2, int b1, int a22, int a21, int a12, int a11)
+{
+  int bet
+  bet =  det(a22, a12, a21, a22)
+  if(bet == 0)
+{
+    output(228)
+    return 228
+}
+  if(bet != 0)
+{
+    output(det(a22, b1, a21, b2) / bet)
+    output(det(b1, a12, b2, a22) / bet)
+}
+}
+def_int main()
+{
+  solve(input(), input(), input(), input(), input(), input())
+}
