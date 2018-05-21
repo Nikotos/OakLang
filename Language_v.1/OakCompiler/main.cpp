@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Binarier.h"
-#include "Compiler.h"
+#include "Bin_maker/Binarier.h"
+#include "Nasm_asm_maker/Compiler.h"
 #include "Parser/acorn.h"
 int main()
 {
